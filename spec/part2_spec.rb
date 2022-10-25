@@ -16,27 +16,27 @@ describe 'Ruby intro part 2' do
     end
   end
   
-  describe '#starts_with_consonant?' do
-    it 'should be defined' do
-      expect { starts_with_consonant?('d') }.not_to raise_error#::NoMethodError)
+  describe '#starts_with_consonant?' do     #This line describes the functionality being tested: determining if a string starts with a consonant
+    it 'should be defined' do               #A test to see if the function is defined
+      expect { starts_with_consonant?('d') }.not_to raise_error#::NoMethodError)  #The function call should not raise a no method error
     end
-    it 'classifies true cases [1 point]' , points: 1 do
-      expect(starts_with_consonant?('v')).to be_truthy, "'v' is a consonant"
-      %w[v vest Veeee crypt].each do |string|
-        expect(starts_with_consonant?(string)).to be_truthy, "Incorrect results for input: \"#{string}\""
+    it 'classifies true cases [1 point]' , points: 1 do #The function can handle cases where the string starts with a consonant
+      expect(starts_with_consonant?('v')).to be_truthy, "'v' is a consonant"    #A function call with the parameter 'v' should return true
+      %w[v vest Veeee crypt].each do |string|           #Loop through several test parameters
+        expect(starts_with_consonant?(string)).to be_truthy, "Incorrect results for input: \"#{string}\""   #These passed parameters should all returh true
       end
     end
-    it 'classifies false cases [1 point]' , points: 1 do
-      expect(starts_with_consonant?('a')).to be_falsy, "'a' is not a consonant"
-      %w[asdfgh Unix].each do |string|
-        expect(starts_with_consonant?(string)).to be_falsy, "Incorrect results for input: \"#{string}\""
+    it 'classifies false cases [1 point]' , points: 1 do  #The function can handle cases where the string does not start with a consonant
+      expect(starts_with_consonant?('a')).to be_falsy, "'a' is not a consonant"   #A function call with the parameter 'a' should return false
+      %w[asdfgh Unix].each do |string|                #Loop through several test parameters
+        expect(starts_with_consonant?(string)).to be_falsy, "Incorrect results for input: \"#{string}\""  #These passed parameters should all return false
       end
     end
-    it 'works on the empty string [0.5 points]' , points: 0.5 do
-      expect(starts_with_consonant?('')).to be_falsy
+    it 'works on the empty string [0.5 points]' , points: 0.5 do  #The function should work with an empty string
+      expect(starts_with_consonant?('')).to be_falsy        #A function call with an empty string should returh false
     end
-    it 'works on nonletters [0.5 points]' , points: 0.5 do
-      expect(starts_with_consonant?('#foo')).to be_falsy
+    it 'works on nonletters [0.5 points]' , points: 0.5 do        #The function should work with strings that start with nonletter characters
+      expect(starts_with_consonant?('#foo')).to be_falsy        #A function call with a string starting with a '#" should return false
     end
   end
   
